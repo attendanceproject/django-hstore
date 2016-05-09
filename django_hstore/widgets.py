@@ -80,3 +80,18 @@ if 'grappelli' in settings.INSTALLED_APPS:
     AdminHStoreWidget = GrappelliAdminHStoreWidget
 else:
     AdminHStoreWidget = DefaultAdminHStoreWidget
+
+
+class SuitAdminHStoreWidget(BaseAdminHStoreWidget):
+    """
+    Widget that displays the HStore contents
+    in the django-admin with a nice interactive UI
+    designed for django-suit
+    """
+    admin_style = 'suit'
+
+
+if 'suit' in settings.INSTALLED_APPS:
+    AdminHStoreWidget = SuitAdminHStoreWidget
+else:
+    AdminHStoreWidget = DefaultAdminHStoreWidget
